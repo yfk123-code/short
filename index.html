@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Zone - Ultra Modern Content Hub 2024</title>
+    <meta name="description" content="Access premium movies, games, software with glassmorphism design. Beautiful, fast, secure downloads.">
+    <meta name="keywords" content="premium downloads, HD movies, games, software, free download, 2024">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background Shapes */
+        .bg-shape {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.6;
+            animation: float 20s infinite ease-in-out;
+            z-index: -1;
+        }
+
+        .shape1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            top: -100px;
+            left: -100px;
+        }
+
+        .shape2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            bottom: -50px;
+            right: -50px;
+            animation-delay: 5s;
+        }
+
+        .shape3 {
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translate(0, 0) scale(1); 
+            }
+            25% { 
+                transform: translate(50px, -50px) scale(1.1); 
+            }
+            50% { 
+                transform: translate(-50px, 50px) scale(0.9); 
+            }
+            75% { 
+                transform: translate(30px, 30px) scale(1.05); 
+            }
+        }
+
+        /* Glass Header Ad */
+        .glass-ad-header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 40px);
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 25px;
+            z-index: 1000;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+            text-align: center;
+        }
+
+        .ad-space {
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 120px 20px 120px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Glass Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+            margin: 30px auto;
+            max-width: 700px;
+            animation: slideUp 0.6s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-title {
+            color: white;
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Glass Steps */
+        .glass-steps {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .glass-step {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 600;
+            color: white;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .glass-step::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            right: -42px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .glass-step:last-child::after {
+            display: none;
+        }
+
+        .glass-step.active {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: white;
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        }
+
+        .glass-step.completed {
+            background: rgba(76, 217, 100, 0.3);
+            border-color: #4cd964;
+        }
+
+        /* Modern Timer */
+        .modern-timer {
+            width: 180px;
+            height: 180px;
+            margin: 40px auto;
+            position: relative;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                0 8px 32px rgba(31, 38, 135, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .timer-number {
+            font-size: 60px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        }
+
+        .timer-ring {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            border: 5px solid transparent;
+            border-top-color: white;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            from { 
+                transform: rotate(0deg); 
+            }
+            to { 
+                transform: rotate(360deg); 
+            }
+        }
+
+        /* Glass Progress */
+        .glass-progress {
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            overflow: hidden;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .glass-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, 
+                rgba(255, 255, 255, 0.3),
+                rgba(255, 255, 255, 0.5),
+                rgba(255, 255, 255, 0.3));
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            transition: width 1s ease;
+        }
+
+        @keyframes shimmer {
+            from { 
+                background-position: -200% 0; 
+            }
+            to { 
+                background-position: 200% 0; 
+            }
+        }
+
+        /* Status Text */
+        .status-text {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            margin: 20px 0;
+        }
+
+        /* Glass Button */
+        .glass-btn {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 18px 50px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: none;
+            margin: 30px auto;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .glass-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
+        }
+
+        .glass-btn.active {
+            display: block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                transform: scale(1); 
+            }
+            50% { 
+                transform: scale(1.05); 
+            }
+        }
+
+        /* Auto Scroll Message */
+        .scroll-message {
+            display: none;
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 165, 0, 0.2);
+            border-radius: 15px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Content Cards */
+        .glass-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .content-glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .content-glass:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(31, 38, 135, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .content-glass h3 {
+            color: white;
+            font-size: 22px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .content-glass p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .emoji-icon {
+            font-size: 30px;
+        }
+
+        /* SEO Content Section */
+        .seo-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            padding: 50px;
+            margin: 60px 0;
+        }
+
+        .seo-section h2 {
+            color: white;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .seo-content {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* Continue Section */
+        .continue-section {
+            display: none;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            padding: 40px;
+            text-align: center;
+            margin: 40px auto;
+            max-width: 600px;
+        }
+
+        .continue-btn {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 20px rgba(39, 174, 96, 0.4);
+        }
+
+        .continue-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(39, 174, 96, 0.6);
+        }
+
+        /* Glass Footer Ad */
+        .glass-ad-footer {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 40px);
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .glass-card {
+                padding: 30px 20px;
+            }
+            
+            .glass-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .glass-steps {
+                gap: 20px;
+            }
+            
+            .glass-step {
+                width: 60px;
+                height: 60px;
+                font-size: 20px;
+            }
+
+            .glass-step::after {
+                width: 20px;
+                right: -22px;
+            }
+
+            .main-title {
+                font-size: 24px;
+            }
+
+            .modern-timer {
+                width: 140px;
+                height: 140px;
+            }
+
+            .timer-number {
+                font-size: 48px;
+            }
+
+            .timer-ring {
+                width: 150px;
+                height: 150px;
+            }
+
+            .seo-section {
+                padding: 30px 20px;
+            }
+
+            .seo-section h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Shapes -->
+    <div class="bg-shape shape1"></div>
+    <div class="bg-shape shape2"></div>
+    <div class="bg-shape shape3"></div>
+
+    <!-- Glass Header Ad -->
+    <div class="glass-ad-header">
+        <div class="ad-space">✨ [ Premium Advertisement Space 728x90 ] ✨</div>
+    </div>
+
+    <div class="container">
+        <!-- Glass Verification Card -->
+        <div class="glass-card">
+            <h2 class="main-title">🔐 Security Verification Process</h2>
+            
+            <div class="glass-steps">
+                <div class="glass-step active" id="step1">1</div>
+                <div class="glass-step" id="step2">2</div>
+                <div class="glass-step" id="step3">3</div>
+            </div>
+
+            <div class="modern-timer">
+                <div class="timer-ring"></div>
+                <div class="timer-number" id="timer">15</div>
+            </div>
+
+            <div class="status-text" id="statusText">
+                Please wait while we prepare your access...
+            </div>
+
+            <div class="glass-progress">
+                <div class="glass-progress-fill" id="progressBar" style="width: 0%">
+                    <span id="progressText">0%</span>
+                </div>
+            </div>
+
+            <div class="scroll-message" id="scrollMessage">
+                📜 Auto-scrolling to bottom... 📜
+            </div>
+
+            <button class="glass-btn" id="actionBtn" onclick="handleAction()">
+                Continue
+            </button>
+        </div>
+
+        <!-- SEO Content Section -->
+        <div class="seo-section">
+            <h2>🎬 Premium HD Movies & Entertainment 2024</h2>
+            <div class="seo-content">
+                <p>Welcome to the ultimate premium content hub where you can access thousands of HD movies, 
+                latest web series, games, software, and exclusive content. Our platform offers:</p>
+                <br>
+                <ul style="list-style: none; padding: 0;">
+                    <li>✅ Latest Hollywood & Bollywood Movies in 4K Quality</li>
+                    <li>✅ Netflix, Amazon Prime, Disney+ Exclusive Series</li>
+                    <li>✅ AAA Gaming Titles with Crack & Updates</li>
+                    <li>✅ Premium Software & Applications</li>
+                    <li>✅ Ultra-Fast Download Servers (No Speed Limit)</li>
+                    <li>✅ 100% Safe & Virus-Free Content</li>
+                    <li>✅ Daily Updates with New Releases</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Glass Content Grid -->
+        <div class="glass-grid">
+            <div class="content-glass">
+                <h3><span class="emoji-icon">🎬</span> Entertainment Hub</h3>
+                <p>Stream and download the latest movies, series, documentaries in ultra HD quality with multiple language support.</p>
+            </div>
+            <div class="content-glass">
+                <h3><span class="emoji-icon">🎮</span> Gaming Paradise</h3>
+                <p>Access premium games, DLCs, mods, and exclusive content. All verified and ready to play instantly.</p>
+            </div>
+            <div class="content-glass">
+                <h3><span class="emoji-icon">📱</span> App Store Plus</h3>
+                <p>Premium apps unlocked, ad-free experiences, and exclusive features not available in regular stores.</p>
+            </div>
+            <div class="content-glass">
+                <h3><span class="emoji-icon">🎵</span> Music Universe</h3>
+                <p>Unlimited music streaming, high-quality downloads, exclusive albums and concert recordings.</p>
+            </div>
+            <div class="content-glass">
+                <h3><span class="emoji-icon">📚</span> Knowledge Base</h3>
+                <p>Educational content, courses, ebooks, and learning materials from top universities and platforms.</p>
+            </div>
+            <div class="content-glass">
+                <h3><span class="emoji-icon">💎</span> Premium Tools</h3>
+                <p>Professional software, plugins, templates, and resources for creators and developers.</p>
+            </div>
+        </div>
+
+        <!-- Continue Section -->
+        <div class="continue-section" id="continueSection">
+            <h3 style="color: white; margin-bottom: 20px; font-size: 24px;">
+                ✅ Step Completed Successfully!
+            </h3>
+            <p style="color: rgba(255,255,255,0.8); margin-bottom: 30px;">
+                Click continue to proceed to the next verification step
+            </p>
+            <button class="continue-btn" onclick="handleContinue()">
+                Continue →
+            </button>
+        </div>
+
+        <!-- More SEO Content -->
+        <div class="seo-section">
+            <h2>🚀 Why Choose Our Premium Service?</h2>
+            <div class="seo-content">
+                <p><strong>Instant Access:</strong> No waiting time, get instant access to all premium content after verification.</p>
+                <br>
+                <p><strong>Global CDN Network:</strong> Download from the nearest server location for maximum speed.</p>
+                <br>
+                <p><strong>24/7 Support:</strong> Our dedicated support team is always ready to help you with any issues.</p>
+                <br>
+                <p><strong>Regular Updates:</strong> New content added daily including latest releases and exclusive content.</p>
+                <br>
+                <p><strong>Safe & Secure:</strong> All files are scanned and verified before upload. 100% malware-free guarantee.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Glass Footer Ad -->
+    <div class="glass-ad-footer">
+        <div class="ad-space">💎 [ Premium Advertisement Space 728x90 ] 💎</div>
+    </div>
+
+    <script>
+        // Global variables
+        let timeLeft = 15;
+        let currentStep = 1;
+        const totalSteps = 3;
+        let timerInterval;
+        let isScrolling = false;
+
+        // Get URL parameter
+        function getUrlParameter() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('url') || 'https://example.com';
+        }
+
+        // Start timer function
+        function startTimer() {
+            timeLeft = 15;
+            isScrolling = false;
+            
+            // Reset UI elements
+            document.getElementById('scrollMessage').style.display = 'none';
+            document.getElementById('actionBtn').classList.remove('active');
+            document.getElementById('continueSection').style.display = 'none';
+            document.getElementById('statusText').textContent = 'Please wait while we prepare your access...';
+            
+            // Clear any existing timer
+            if (timerInterval) {
+                clearInterval(timerInterval);
+            }
+            
+            // Start countdown
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                document.getElementById('timer').textContent = timeLeft;
+                
+                // Update progress bar
+                const progress = ((15 - timeLeft) / 15) * 100;
+                document.getElementById('progressBar').style.width = progress + '%';
+                document.getElementById('progressText').textContent = Math.round(progress) + '%';
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    document.getElementById('timer').innerHTML = '✓';
+                    document.getElementById('progressBar').style.width = '100%';
+                    document.getElementById('progressText').textContent = '100%';
+                    document.getElementById('statusText').textContent = 'Verification ready! Auto-scrolling...';
+                    
+                    // Start auto scroll
+                    setTimeout(() => {
+                        startAutoScroll();
+                    }, 500);
+                }
+            }, 1000);
+        }
+
+        // Auto scroll function
+        function startAutoScroll() {
+            if (isScrolling) return;
+            isScrolling = true;
+            
+            // Show scroll message
+            document.getElementById('scrollMessage').style.display = 'block';
+            
+            // Calculate scroll distance
+            const documentHeight = document.documentElement.scrollHeight;
+            const windowHeight = window.innerHeight;
+            const maxScroll = documentHeight - windowHeight;
+            
+            // Smooth scroll animation
+            let currentScroll = window.pageYOffset;
+            const scrollDuration = 3000; // 3 seconds
+            const scrollStep = maxScroll / (scrollDuration / 16);
+            
+            const scrollInterval = setInterval(() => {
+                currentScroll += scrollStep;
+                
+                if (currentScroll >= maxScroll) {
+                    currentScroll = maxScroll;
+                    clearInterval(scrollInterval);
+                    
+                    // Hide scroll message and show continue section
+                    setTimeout(() => {
+                        document.getElementById('scrollMessage').style.display = 'none';
+                        document.getElementById('continueSection').style.display = 'block';
+                        document.getElementById('continueSection').scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'center' 
+                        });
+                    }, 500);
+                }
+                
+                window.scrollTo(0, currentScroll);
+            }, 16);
+        }
+
+        // Handle continue button click
+        function handleContinue() {
+            // Hide continue section
+            document.getElementById('continueSection').style.display = 'none';
+            
+            // Update steps
+            document.getElementById(`step${currentStep}`).classList.remove('active');
+            document.getElementById(`step${currentStep}`).classList.add('completed');
+            
+            currentStep++;
+            
+            if (currentStep <= totalSteps) {
+                // Move to next step
+                document.getElementById(`step${currentStep}`).classList.add('active');
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                
+                // Restart timer after scroll
+                setTimeout(() => {
+                    startTimer();
+                }, 1000);
+            } else {
+                // All steps completed - redirect
+                completeVerification();
+            }
+        }
+
+        // Complete verification and redirect
+        function completeVerification() {
+            document.getElementById('statusText').innerHTML = '✅ Verification Complete! Redirecting...';
+            
+            // Show loading state
+            setTimeout(() => {
+                const redirectUrl = getUrlParameter();
+                window.location.href = redirectUrl;
+            }, 2000);
+        }
+
+        // Initialize when page loads
+        window.onload = function() {
+            console.log('Page loaded, starting timer...');
+            startTimer();
+        };
+
+        // Prevent right-click (optional)
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+    </script>
+</body>
+</html>
